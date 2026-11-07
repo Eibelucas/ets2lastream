@@ -1,0 +1,16 @@
+.tools/
+src/**/bin/
+tests/**/bin/
+**/obj/
+artifacts/
+*.user
+streamdeck/de.lucat.ets2la.sdPlugin/logs/
+.codex-remote-attachments/
+.codex/
+.agents/
+.aws/
+.env
+.env.*
+!.env.example
+node_modules/
+.vs/

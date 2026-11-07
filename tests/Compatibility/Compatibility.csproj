@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <ETS2LAPath Condition="'$(ETS2LAPath)' == ''">$(LOCALAPPDATA)\ETS2LA\current</ETS2LAPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Reference Include="ETS2LA.Shared"><HintPath>$(ETS2LAPath)\ETS2LA.Shared.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ETS2LA.Backend"><HintPath>$(ETS2LAPath)\ETS2LA.Backend.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,424 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "de.lucat.ets2la",
+  "Name": "ETS2LA",
+  "Version": "0.1.1.0",
+  "Author": "Lucat",
+  "Description": "ETS2LA steuern und Live-Status anzeigen. Straßenlimit oder eigenes Tempo direkt am Stream Deck.",
+  "Category": "ETS2LA",
+  "CategoryIcon": "imgs/category",
+  "Icon": "imgs/plugin",
+  "CodePath": "bin/plugin.js",
+  "Nodejs": {
+    "Version": "24"
+  },
+  "SDKVersion": 2,
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "PropertyInspectorPath": "ui/settings.html",
+  "Actions": [
+    {
+      "UUID": "de.lucat.ets2la.assist",
+      "Name": "Assistenten ein/aus",
+      "Icon": "imgs/assist",
+      "Tooltip": "Assistenten ein/aus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/assist",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.acc",
+      "Name": "ACC ein/aus",
+      "Icon": "imgs/acc",
+      "Tooltip": "ACC ein/aus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/acc",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.lane",
+      "Name": "Spurhalten ein/aus",
+      "Icon": "imgs/lane",
+      "Tooltip": "Spurhalten ein/aus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/lane",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.mode",
+      "Name": "Fahrmodus wechseln",
+      "Icon": "imgs/mode",
+      "Tooltip": "Fahrmodus wechseln",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/mode",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.cancel",
+      "Name": "Assistenten ausschalten",
+      "Icon": "imgs/cancel",
+      "Tooltip": "Assistenten ausschalten",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/cancel",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.resume",
+      "Name": "Assistenten fortsetzen",
+      "Icon": "imgs/resume",
+      "Tooltip": "Assistenten fortsetzen",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/resume",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.speed-mode",
+      "Name": "Straßenlimit / eigenes Tempo",
+      "Icon": "imgs/speed-mode",
+      "Tooltip": "Straßenlimit / eigenes Tempo",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/speed-mode",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.speed-up",
+      "Name": "Zieltempo erhöhen",
+      "Icon": "imgs/speed-up",
+      "Tooltip": "Zieltempo erhöhen",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/speed-up",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.speed-down",
+      "Name": "Zieltempo verringern",
+      "Icon": "imgs/speed-down",
+      "Tooltip": "Zieltempo verringern",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/speed-down",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.speed-preset",
+      "Name": "Eigenes Zieltempo setzen",
+      "Icon": "imgs/speed-preset",
+      "Tooltip": "Eigenes Zieltempo setzen",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/speed-preset",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.speed-capture",
+      "Name": "Aktuelles Tempo übernehmen",
+      "Icon": "imgs/speed-capture",
+      "Tooltip": "Aktuelles Tempo übernehmen",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/speed-capture",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.speed",
+      "Name": "Geschwindigkeit anzeigen",
+      "Icon": "imgs/speed",
+      "Tooltip": "Geschwindigkeit anzeigen",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/speed",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.target",
+      "Name": "Zieltempo anzeigen",
+      "Icon": "imgs/target",
+      "Tooltip": "Zieltempo anzeigen",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/target",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.status",
+      "Name": "Verbindung und Fahrstatus",
+      "Icon": "imgs/status",
+      "Tooltip": "Verbindung und Fahrstatus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/status",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.distance",
+      "Name": "Folgeabstand wechseln",
+      "Icon": "imgs/distance",
+      "Tooltip": "Folgeabstand wechseln",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/distance",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.response",
+      "Name": "ACC-Reaktion wechseln",
+      "Icon": "imgs/response",
+      "Tooltip": "ACC-Reaktion wechseln",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/response",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.steering",
+      "Name": "Lenkempfindlichkeit wechseln",
+      "Icon": "imgs/steering",
+      "Tooltip": "Lenkempfindlichkeit wechseln",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/steering",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.collision",
+      "Name": "Kollisionsvermeidung wechseln",
+      "Icon": "imgs/collision",
+      "Tooltip": "Kollisionsvermeidung wechseln",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/collision",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.warning",
+      "Name": "Tempolimit-Warnung wechseln",
+      "Icon": "imgs/warning",
+      "Tooltip": "Tempolimit-Warnung wechseln",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/warning",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.traffic-lights",
+      "Name": "Ampeln beachten ein/aus",
+      "Icon": "imgs/traffic-lights",
+      "Tooltip": "Ampeln beachten ein/aus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/traffic-lights",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.gates",
+      "Name": "Schranken beachten ein/aus",
+      "Icon": "imgs/gates",
+      "Tooltip": "Schranken beachten ein/aus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/gates",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.lucat.ets2la.stability",
+      "Name": "Pause bei Instabilität ein/aus",
+      "Icon": "imgs/stability",
+      "Tooltip": "Pause bei Instabilität ein/aus",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/stability",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ]
+}

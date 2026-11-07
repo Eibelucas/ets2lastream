@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>StreamDeckBridge</AssemblyName>
+    <Version>0.1.1</Version>
+    <ETS2LAPath Condition="'$(ETS2LAPath)' == ''">$(LOCALAPPDATA)\ETS2LA\current</ETS2LAPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Compile Include="..\Bridge\*.cs" Link="Bridge\%(Filename)%(Extension)" />
+    <Reference Include="ETS2LA.Shared"><HintPath>$(ETS2LAPath)\ETS2LA.Shared.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ETS2LA.State"><HintPath>$(ETS2LAPath)\ETS2LA.State.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ETS2LA.Settings"><HintPath>$(ETS2LAPath)\ETS2LA.Settings.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ETS2LA.Game"><HintPath>$(ETS2LAPath)\ETS2LA.Game.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ETS2LA.Backend"><HintPath>$(ETS2LAPath)\ETS2LA.Backend.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ETS2LA.Logging"><HintPath>$(ETS2LAPath)\ETS2LA.Logging.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckETS2LA" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(ETS2LAPath)\ETS2LA.Shared.dll')" Text="ETS2LA nicht gefunden. Mit -p:ETS2LAPath=PFAD den Ordner mit ETS2LA.Shared.dll angeben." />
+  </Target>
+</Project>
